@@ -1,0 +1,321 @@
+
+/* Base styles remain same */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color:#ECFFE6;
+}
+
+/* Enhanced Header Styles with Animations */
+.resume-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #006400, #008000);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: headerFadeIn 1s ease-out;
+}
+
+@keyframes headerFadeIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animated Profile Picture */
+.university-logo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.university-logo {
+    width: 10%;
+    height: 100%;
+    border-radius: 1000%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border: 4px solid white;
+    animation: profilePop 1s ease-out;
+}
+
+.profile-container:hover .profile-pic {
+    transform: scale(1.1) rotateY(10deg);
+}
+
+@keyframes profilePop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Glowing effect for profile picture */
+.profile-container::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #006400, #32CD32);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-container:hover::after {
+    opacity: 0.7;
+    animation: glowPulse 1.5s infinite;
+}
+
+@keyframes glowPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Animated Section Cards */
+.section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: sectionSlideIn 0.5s ease-out backwards;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+@keyframes sectionSlideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animated Skills Items */
+.skill-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    border: 2px solid #006400;
+    transition: all 0.3s ease;
+    animation: skillFadeIn 0.5s ease-out backwards;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: #006400;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,100,0,0.2);
+}
+
+@keyframes skillFadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animated Toggle Buttons */
+.toggle-btn {
+    background: #006400;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.toggle-btn:hover {
+    background: #008000;
+    transform: translateY(-2px);
+}
+
+.toggle-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.toggle-btn:active::after {
+    opacity: 1;
+    transform: scale(20, 20) translate(-50%);
+    transition: all 1s, opacity 0.5s;
+}
+
+/* Enhanced Section Content Animation */
+.section-content {
+    transition: all 0.5s ease-out;
+    overflow: hidden;
+}
+
+.section-content.hidden {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.section-content.visible {
+    max-height: 2000px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Project Items Animation */
+.project-item {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #006400;
+    transition: all 0.3s ease;
+    animation: projectSlideIn 0.5s ease-out backwards;
+}
+
+.project-item:hover {
+    transform: translateX(10px);
+    background: #f0f8f0;
+    box-shadow: 0 4px 12px rgba(0,100,0,0.1);
+}
+
+@keyframes projectSlideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Course List Animation */
+.course-item {
+    animation: courseAppear 0.5s ease-out backwards;
+}
+
+@keyframes courseAppear {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Add stagger effect to skills and courses */
+.skills-grid .skill-item:nth-child(n) {
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.course-list .course-item:nth-child(n) {
+    animation-delay: calc(0.1s * var(--i));
+}
+.controls-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.theme-switch {
+    margin-bottom: 10px;
+}
+
+.animation-toggle {
+    margin-top: 10px;
+}
+
+.section-controls button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background: #006400;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.section-controls button:hover {
+    background: #008000;
+}
+
+.hidden-section {
+    display: none;
+}
+
+.theme-dark {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+.theme-dark .section {
+    background: #3d3d3d;
+    color: #ffffff;
+}
+
+.theme-dark .skill-item {
+    background: #4d4d4d;
+    color: #ffffff;
+}

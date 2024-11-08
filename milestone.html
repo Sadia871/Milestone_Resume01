@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resume - SMIU</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="resume-header">
+        <img src="./profile.jpg" alt="SMIU Logo" class="university-logo">
+        <h1>SADIA SALEEM</h1>
+        <p>Software Engineering Student</p>
+        <p>Sindh Madressatul Islam University</p>
+        <div class="contact-info">
+            <p> sadiasaleem871@gmail.com |  +92 320813 4050</p>
+            <p> Karachi, Pakistan</p>
+        </div>
+    </div>
+
+    <div class="section" id="education-section">
+        <div class="section-header">
+            <h2>Education</h2>
+            <button class="toggle-btn" onclick="toggleSection('education-content')">Education</button>
+        </div>
+        <div class="section-content visible" id="education-content">
+            <h3>Bachelor of Computer Science</h3>
+            <p>Sindh Madressatul Islam University (SMIU)</p>
+            <p class="cgpa">CGPA: 3.12/4.00</p>
+            <p class="semester-info">Current Semester: 5th</p>
+            <h4>Relevant Coursework:</h4>
+            <ul class="course-list">
+                <li class="course-item">Programming Fundamentals</li>
+                <li class="course-item">Object-Oriented Programming</li>
+                <li class="course-item">Data Structures</li>
+                <li class="course-item">Database Management Systems</li>
+                <li class="course-item">Web Development</li>
+                <li class="course-item">Software Engineering</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="skills-section">
+        <div class="section-header">
+            <h2>Technical Skills</h2>
+            <button class="toggle-btn" onclick="toggleSection('skills-content')">Skills</button>
+        </div>
+        <div class="section-content visible" id="skills-content">
+            <div class="skills-grid">
+                <div class="skill-item">C++</div>
+                <div class="skill-item">Java</div>
+                <div class="skill-item">HTML/CSS</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">MySQL</div>
+                <div class="skill-item">Git</div>
+                <div class="skill-item">Problem Solving</div>
+                <div class="skill-item">Team Work</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="projects-section">
+        <div class="section-header">
+            <h2>Academic Projects</h2>
+        <button class="toggle-btn" onclick="toggleSection('projects-content')">Project</button>
+        </div>
+        <div class="section-content visible" id="projects-content">
+            <div class="project-item">
+                <h3>Student Management System</h3>
+                <p>A database project using MySQL and Java</p>
+                <ul>
+                    <li>Implemented CRUD operations for student records</li>
+                    <li>Created user-friendly interface using Java Swing</li>
+                    <li>Worked in a team of 3 members</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3>Personal Portfolio Website</h3>
+                <p>A responsive website using HTML, CSS, and JavaScript</p>
+                <ul>
+                    <li>Designed and developed a personal portfolio website</li>
+                    <li>Implemented responsive design principles</li>
+                    <li>Added interactive elements using JavaScript</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="achievements-section">
+        <div class="section-header">
+            <h2>Achievements & Activities</h2>
+            <button class="toggle-btn" onclick="toggleSection('achievements-content')">Records</button>
+        </div>
+        <div class="section-content visible" id="achievements-content">
+            <ul>
+                <li>Member of SMIU Computing Society</li>
+                <li>Participated in University Programming Competition</li>
+                <li>Volunteer at University Tech Events</li>
+                <li>Class Representative</li>
+            </ul>
+        </div>
+    </div>
+    <div class="controls-panel">
+        <div class="theme-switch">
+            <label>
+                <input type="checkbox" id="themeToggle">
+                Dark Mode
+            </label>
+        </div>
+        <div class="section-controls">
+            <button id="toggleAll">All Sections</button>
+            <button id="toggleSkills"> Skills</button>
+            <button id="toggleEducation"> Education</button>
+            <button id="toggleProjects"> Projects</button>
+        </div>
+        <div class="animation-toggle">
+            <label>
+                <input type="checkbox" id="animationToggle" checked>
+                Enable Animations
+            </label>
+        </div>
+    </div>
+</body>
+</html>
